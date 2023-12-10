@@ -10,7 +10,7 @@ const Landing = () => {
         <div>|</div>
         <div className="">Artist</div>
         <div>|</div>
-        <div className="">Home &quot;Chef&quot;"</div>
+        <div className="">Home &quot;Chef&quot;</div>
       </div>
     </div>
   );
