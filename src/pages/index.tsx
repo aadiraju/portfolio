@@ -1,4 +1,5 @@
 import { Manrope } from "next/font/google";
+import Head from "next/head";
 import Landing from "@/components/sections/landingSection";
 import {
   MouseParallaxContainer,
@@ -12,6 +13,9 @@ const manrope = Manrope({ subsets: ["latin"] });
 const Home = () => {
   return (
     <>
+      <Head>
+        <title>Abhineeth Adiraju</title>
+      </Head>
       <main>
         <div className="fixed z-[-2] h-full w-full bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#000000_1px)] bg-[size:10px_10px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#ffffff10_33%,#000_100%)]"></div>
         <MouseParallaxContainer
@@ -35,7 +39,6 @@ const Home = () => {
               </MouseParallaxChild>
             </div>
           </div>
-          
         </MouseParallaxContainer>
       </main>
       <ProgressBar />
