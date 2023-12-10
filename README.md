@@ -34,3 +34,9 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+## Ideas
+- Add Pixel Art stickers and use them in a pattern to make landing page BG, fade this out by the time you get to projects to prevent oversaturation
+- Add a tiny sleeping avatar made of pixel art that says hi ^‿^. Can make its eyes follow the cursor but that is up to you might be creepy idk
+- make website favicon be  ^‿^ not only for the bit but also ^^ looks like AA.

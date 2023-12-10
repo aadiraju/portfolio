@@ -1,13 +1,19 @@
-export default function Landing() {
+const Landing = () => {
   return (
-    <div className="flex z-10 flex-col items-center justify-center">
-      <div className="flex flex-col justify-center tracking-wide text-8xl p-3 font-semibold drop-shadow-xl">
+    <div className="flex z-10 flex-col items-center justify-center w-full">
+      <div className="flex flex-col justify-center tracking-tighter text-7xl p-5 font-bold drop-shadow-xl">
         <div className="gap-3 items-baseline flex-shrink-0 sm:text-center">Abhineeth</div>
         <div className="gap-3 items-baseline flex-shrink-0 sm:text-center">Adiraju</div>
       </div>
-      <div className="flex flex-col justify-center p-3 text-4xl tracking-wide font-extralight">
-        Work in Progress....
+      <div className="flex flex-row justify-center items-center w-full p-5 gap-4 text-3xl tracking-tighter font-normal">
+        <div className="">DevOps Engineer</div>
+        <div>|</div>
+        <div className="">Artist</div>
+        <div>|</div>
+        <div className="">Home "Chef"</div>
       </div>
     </div>
   );
-}
+};
+
+export default Landing;

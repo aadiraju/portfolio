@@ -1,33 +1,52 @@
-import Image from "next/image";
-import { Aleo } from "next/font/google";
+import { Manrope } from "next/font/google";
 import Landing from "@/components/sections/landingSection";
 import {
   MouseParallaxContainer,
   MouseParallaxChild,
 } from "react-parallax-mouse";
+import ProgressBar from "@/components/progressBar";
+import Header from "@/components/Header";
 
-const aleo = Aleo({ subsets: ["latin"] });
+const manrope = Manrope({ subsets: ["latin"] });
 
-export default function Homie() {
+const Home = () => {
   return (
-    <main>
-      <MouseParallaxContainer
-        globalFactorX={0.05}
-        globalFactorY={0.05}
-        resetOnLeave
-        inverted
-        className={`flex min-h-screen items-center justify-center gap-6 px-7 py-0 ${aleo.className}`}
-      >
-        <div className="relative h-80 w-full max-w-lg p-8">
-          <MouseParallaxChild factorX={0.5} factorY={0.5} className="relative">
-            <div className="animate-blob from-33% absolute -right-4 top-4 h-72 w-72 rounded-full bg-gradient-radial from-fuchsia-900 to-violet-900 to-90% opacity-70 mix-blend-screen blur-2xl filter" />
-            <div className="animate-blob animation-delay-4000 from-33% absolute -bottom-36 -right-28 h-64 w-64 rounded-full bg-gradient-radial from-pink-900 to-rose-900 to-90% opacity-70 mix-blend-screen blur-2xl filter" />
-          </MouseParallaxChild>
-          <MouseParallaxChild factorX={0.001} factorY={0.001}>
-            <Landing />
-          </MouseParallaxChild>
-        </div>
-      </MouseParallaxContainer>
-    </main>
+    <>
+      <main>
+        <div className="fixed z-[-2] h-full w-full bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#000000_1px)] bg-[size:10px_10px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#ffffff10_33%,#000_100%)]"></div>
+        <MouseParallaxContainer
+          globalFactorX={0.05}
+          globalFactorY={0.05}
+          resetOnLeave
+          inverted
+          className={`flex h-full min-h-screen items-center justify-center gap-6 px-7 py-0 ${manrope.className}`}
+        >
+          <Header />
+          <div
+            className={`flex h-full flex-col items-center justify-center gap-6 px-7 py-0 ${manrope.className}`}
+          >
+            <div className="relative flex h-full w-full justify-center p-8">
+              <MouseParallaxChild
+                factorX={0.15}
+                factorY={0.15}
+                className="w-full justify-items-center"
+              >
+                <Landing />
+              </MouseParallaxChild>
+            </div>
+          </div>
+          
+        </MouseParallaxContainer>
+      </main>
+      <ProgressBar />
+    </>
+
+    // https://www.researchgate.net/publication/374315197_An_Open_CS1_Learning_Platform_to_Promote_and_Incentivize_Deliberate_Practice
+    // https://www.researchgate.net/publication/374314494_JUnit_An_Open_Educational_Tool_for_Simplifying_Unit_Testing
+    //  https://canvas-gamification.github.io/docs/
+
+    //https://github.com/pmndrs/drei#scrollcontrols
+    //https://codesandbox.io/s/4m0d0?file=/src/App.js
   );
-}
+};
+export default Home;
