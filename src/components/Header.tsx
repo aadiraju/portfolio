@@ -8,7 +8,7 @@ const Header = () => {
   const {openResume, openEmail} = useClickActions();
   return (
     <div className="fixed top-0 flex h-[15vh] w-full px-8">
-      <div className="w-[10vh] pt-5 flex-initial justify-start">
+      <div className="w-[10vh] mt-6 flex-initial justify-start">
         <Image
           src="/logo.svg"
           alt="Site Logo"
