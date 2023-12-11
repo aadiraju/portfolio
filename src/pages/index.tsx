@@ -43,13 +43,6 @@ const Home = () => {
       </main>
       <ProgressBar />
     </>
-
-    // https://www.researchgate.net/publication/374315197_An_Open_CS1_Learning_Platform_to_Promote_and_Incentivize_Deliberate_Practice
-    // https://www.researchgate.net/publication/374314494_JUnit_An_Open_Educational_Tool_for_Simplifying_Unit_Testing
-    //  https://canvas-gamification.github.io/docs/
-
-    //https://github.com/pmndrs/drei#scrollcontrols
-    //https://codesandbox.io/s/4m0d0?file=/src/App.js
   );
 };
 export default Home;

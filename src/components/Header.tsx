@@ -1,10 +1,14 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { GITHUB, LINKEDIN } from "@/data/links";
+import { useClickActions } from "@/hooks/useClickActions";
+import UnderlineLink from "./UnderlineLink";
 
 const Header = () => {
+  const {openResume, openEmail} = useClickActions();
   return (
     <div className="fixed top-0 flex h-[15vh] w-full px-8">
-      <div className="w-[10vh] pt-5 flex-initial justify-start">
+      <div className="w-[10vh] mt-6 flex-initial justify-start">
         <Image
           src="/logo.svg"
           alt="Site Logo"
@@ -14,11 +18,13 @@ const Header = () => {
         />
       </div>
       <div className="flex basis-full items-center justify-end gap-2 text-2xl font-medium tracking-tighter">
-        <a>Github</a>
+        <UnderlineLink href={GITHUB}>Github</UnderlineLink>
         <div>|</div>
-        <a>Resume</a>
+        <UnderlineLink onClick={openResume}>Resume</UnderlineLink>
         <div>|</div>
-        <a>LinkedIn</a>
+        <UnderlineLink href={LINKEDIN}>LinkedIn</UnderlineLink>
+        <div>|</div>
+        <UnderlineLink onClick={openEmail}>Email</UnderlineLink>
       </div>
     </div>
   );
