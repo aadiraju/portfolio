@@ -1,7 +1,7 @@
-import { useSpring, useScroll, motion } from "framer-motion";
+import { useSpring, useScroll, motion, MotionValue } from "framer-motion";
 
 const ProgressBar = () => {
-  const { scrollYProgress } = useScroll({offset: ["start 0.001", "end end"]});
+  const {scrollYProgress} = useScroll({offset: ["start 0.001", "end end"]});
   const scaleY = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
