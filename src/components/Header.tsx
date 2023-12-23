@@ -1,17 +1,9 @@
 import Image from "next/image";
-import { useSpring, useScroll, motion, useTransform, MotionValue } from "framer-motion";
+import { useScroll, motion, useTransform } from "framer-motion";
 import { GITHUB, LINKEDIN } from "@/data/links";
 import { useClickActions } from "@/hooks/useClickActions";
 import UnderlineLink from "./UnderlineLink";
-
-function springify(rawMotionValue: MotionValue<number>) {
-  const springifiedValue = useSpring(rawMotionValue, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  });
-  return springifiedValue;
-}
+import { springify } from "@/lib/utils";
 
 const Header = () => {
   const {scrollYProgress} = useScroll();
