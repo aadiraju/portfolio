@@ -3,7 +3,7 @@ import { useScroll, motion, useTransform } from "framer-motion";
 import { GITHUB, LINKEDIN } from "@/data/links";
 import { useClickActions } from "@/hooks/useClickActions";
 import UnderlineLink from "./UnderlineLink";
-import { springify } from "@/lib/utils";
+import { useSpringify } from "@/lib/utils";
 
 const Header = () => {
   const {scrollYProgress} = useScroll();
@@ -14,7 +14,7 @@ const Header = () => {
     <div className="fixed top-2 flex h-[15vh] w-full px-8">
       <div className="flex items-center justify-start">
         <motion.span 
-        style= {{scale: springify(scaleLogoRaw)}}
+        style= {{scale: useSpringify(scaleLogoRaw)}}
         className="rounded-lg backdrop-blur-md p-3">
           <Image
             src="/logo.svg"
@@ -26,7 +26,7 @@ const Header = () => {
         </motion.span>
       </div>
       <div className="flex basis-full items-center justify-end text-2xl font-medium tracking-tighter">
-        <motion.div style={{scale: springify(scaleMenuRaw)}} className="flex gap-2 backdrop-blur-md rounded-lg p-4">
+        <motion.div style={{scale: useSpringify(scaleMenuRaw)}} className="flex gap-2 backdrop-blur-md rounded-lg p-4">
           <UnderlineLink href={GITHUB}>Github</UnderlineLink>
           <div>|</div>
           <UnderlineLink onClick={openResume}>Resume</UnderlineLink>

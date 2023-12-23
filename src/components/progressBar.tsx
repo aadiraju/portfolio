@@ -1,4 +1,4 @@
-import { springify } from "@/lib/utils";
+import { useSpringify } from "@/lib/utils";
 import { useScroll, motion } from "framer-motion";
 
 const ProgressBar = () => {
@@ -7,7 +7,7 @@ const ProgressBar = () => {
     <div className="fixed right-[5vh] top-[30vh] h-96 w-2 rounded-full bg-neutral-900">
       <motion.div
         className="h-full rounded-full bg-white [transform-origin:top]"
-        style={{ scaleY: springify(scrollYProgress) }}
+        style={{ scaleY: useSpringify(scrollYProgress) }}
       />
     </div>
   );

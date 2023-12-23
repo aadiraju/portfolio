@@ -1,6 +1,6 @@
 import { MotionValue, useSpring } from "framer-motion";
 
-function springify(rawMotionValue: MotionValue<number>) {
+function useSpringify(rawMotionValue: MotionValue<number>) {
     const springifiedValue = useSpring(rawMotionValue, {
       stiffness: 100,
       damping: 30,
@@ -11,5 +11,5 @@ function springify(rawMotionValue: MotionValue<number>) {
 
 
   export {
-    springify
+    useSpringify
   }
