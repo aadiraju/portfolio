@@ -1,4 +1,4 @@
-import PipelineAnimation from "../PipelineAnimation";
+import PipelineAnimation from "@/components/PipelineAnimation";
 
 const About = () => {
   return (

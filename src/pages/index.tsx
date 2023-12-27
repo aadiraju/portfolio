@@ -8,7 +8,6 @@ import {
 import ProgressBar from "@/components/progressBar";
 import Header from "@/components/Header";
 import About from "@/components/sections/aboutSection";
-import { useScroll } from "framer-motion";
 
 const manrope = Manrope({ subsets: ["latin"] });
 
