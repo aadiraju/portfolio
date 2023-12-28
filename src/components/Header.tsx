@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useScroll, motion, useTransform } from "framer-motion";
 import { GITHUB, LINKEDIN } from "@/data/links";
 import { useClickActions } from "@/hooks/useClickActions";
-import UnderlineLink from "./UnderlineLink";
+import UnderlineLink from "@/components/UnderlineLink";
 import { useSpringify } from "@/lib/utils";
 
 const Header = () => {

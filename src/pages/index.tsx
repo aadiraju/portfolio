@@ -8,6 +8,7 @@ import {
 import ProgressBar from "@/components/progressBar";
 import Header from "@/components/Header";
 import About from "@/components/sections/aboutSection";
+import Projects from "@/components/sections/projectsSection";
 
 const manrope = Manrope({ subsets: ["latin"] });
 
@@ -26,24 +27,23 @@ const Home = () => {
           inverted
           className={`flex h-full min-h-screen items-center justify-center gap-6 px-7 py-0 ${manrope.className}`}
         >
-          <Header />
-          <div
-            className={`-z-10`}
-          >
-            <div className="relative flex h-full w-full justify-center p-8">
-              <MouseParallaxChild
-                factorX={0.15}
-                factorY={0.15}
-                className="w-full justify-items-center"
-              >
-                <Landing />
-                <About />
-              </MouseParallaxChild>
-            </div>
+          <span className="z-10">
+            <Header />
+          </span>
+          <div className="relative flex h-full w-full justify-center p-8">
+            <MouseParallaxChild
+              factorX={0.15}
+              factorY={0.15}
+              className="w-full justify-items-center"
+            >
+              <Landing />
+              <About />
+              <Projects />
+            </MouseParallaxChild>
           </div>
         </MouseParallaxContainer>
       </main>
-      <ProgressBar/>
+      <ProgressBar />
     </>
   );
 };
