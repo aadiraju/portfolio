@@ -11,15 +11,15 @@ const ProjectRow = ({ title, synopsis, skills, imgPath, links }: Project) => {
       <div className="flex flex-col flex-[5] gap-6 align-bottom">
         <div className="inline-flex flex-col text-xl xl:text-2xl xl:font-normal">
           {links.map((link, index) => (
-            <UnderlineLink className="w-[max-content]" href={link.hyperlink}>
+            <UnderlineLink key={index} className="w-[max-content]" href={link.hyperlink}>
               {link.linkText}
               <Arrow />
             </UnderlineLink>
           ))}
         </div>
         <div className="flex flex-row gap-2">
-          {skills.map((skill) => (
-            <div className=" rounded-lg border border-white px-4 py-2 text-sm xl:text-lg">
+          {skills.map((skill, index) => (
+            <div key={index} className=" rounded-lg border border-white px-4 py-2 text-sm xl:text-lg">
               {skill}
             </div>
           ))}

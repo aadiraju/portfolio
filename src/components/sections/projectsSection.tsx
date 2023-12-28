@@ -7,8 +7,8 @@ const Projects = () => {
       <div className="mb-[5vh] text-6xl font-semibold">Projects</div>
       <div className="flex h-full">
         <div className="flex flex-col gap-8 justify-start">
-          {PROJECTS.map((project) => (
-            <ProjectRow {...project} />
+          {PROJECTS.map((project, index) => (
+            <ProjectRow key={index} {...project} />
           ))}
         </div>
       </div>
