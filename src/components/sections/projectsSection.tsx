@@ -6,7 +6,7 @@ const Projects = () => {
     <div className="z-10 mt-5 flex h-[100vh] w-full flex-col p-5 tracking-tight">
       <div className="mb-[5vh] text-6xl font-semibold">Projects</div>
       <div className="flex h-full">
-        <div className="flex flex-col gap-2 justify-start">
+        <div className="flex flex-col gap-4 justify-start">
           {PROJECTS.map((project, index) => (
             <ProjectRow key={index} {...project} />
           ))}

@@ -9,5 +9,6 @@ export const PROJECT_LINKS = {
     JUNIT_PAPER: new URL("https://www.researchgate.net/publication/374314494_JUnit_An_Open_Educational_Tool_for_Simplifying_Unit_Testing"),
     JUNIT_DOCS: new URL("https://canvas-gamification.github.io/docs/"),
     JUNIT_REPO: new URL("https://github.com/canvas-gamification/canvas-gamification-junit-tests"),
-    BYTESIZED_REPO: new URL("https://github.com/aadiraju/bytesized")
+    AWM_WEBSITE: new URL("https://cas.teradici.com"),
+    AWM_DOCS: new URL("https://www.hp.com/us-en/solutions/digital-workspaces.html")
 };
