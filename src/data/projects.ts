@@ -9,6 +9,7 @@ type Project = {
   synopsis: string;
   skills: string[];
   imgPath: string;
+  imgAltText?: string;
   links: Link[];
 };
 
