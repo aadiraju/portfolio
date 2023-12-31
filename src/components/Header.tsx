@@ -15,7 +15,7 @@ const Header = () => {
       <div className="flex items-center justify-start">
         <motion.span 
         style= {{scale: useSpringify(scaleLogoRaw)}}
-        className="rounded-lg backdrop-blur-md p-3">
+        className="rounded-xl backdrop-blur-md p-3 shadow-2xl">
           <Image
             src="/logo.svg"
             alt="Site Logo"
@@ -26,7 +26,7 @@ const Header = () => {
         </motion.span>
       </div>
       <div className="flex basis-full items-center justify-end text-2xl font-medium tracking-tighter">
-        <motion.div style={{scale: useSpringify(scaleMenuRaw)}} className="flex gap-2 backdrop-blur-md rounded-lg p-4">
+        <motion.div style={{scale: useSpringify(scaleMenuRaw)}} className="flex gap-2 backdrop-blur-md rounded-xl p-4 shadow-2xl">
           <UnderlineLink href={GITHUB}>Github</UnderlineLink>
           <div>|</div>
           <UnderlineLink onClick={openResume}>Resume</UnderlineLink>
