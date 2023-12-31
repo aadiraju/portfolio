@@ -1,3 +1,5 @@
+import { Link } from "./projects";
+
 export const EMAIL = "abhineeth00@gmail.com";
 export const RESUME_PATH = "/assets/Abhineeth_CV.pdf";
 export const GITHUB = new URL("https://github.com/aadiraju");
@@ -12,3 +14,9 @@ export const PROJECT_LINKS = {
     AWM_WEBSITE: new URL("https://cas.teradici.com"),
     AWM_DOCS: new URL("https://www.hp.com/us-en/solutions/digital-workspaces.html")
 };
+
+export const HOMIE_WEBSITES: Link[] = [
+    {linkText: "Opey Adeyemi", hyperlink: new URL("https://www.opeyadeyemi.com/")},
+    {linkText: "Mathew De Vin", hyperlink: new URL("https://mathewdevin.com/")},
+    {linkText: "Caelan Atamanchuk", hyperlink: new URL("https://caelanatamanchuk.com/")},
+];

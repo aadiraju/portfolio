@@ -1,4 +1,5 @@
 import { Manrope } from "next/font/google";
+import localFont from "next/font/local";
 import Head from "next/head";
 import Landing from "@/components/sections/landingSection";
 import {
@@ -9,8 +10,10 @@ import ProgressBar from "@/components/progressBar";
 import Header from "@/components/Header";
 import About from "@/components/sections/aboutSection";
 import Projects from "@/components/sections/projectsSection";
+import FunStuff from "@/components/sections/funStuffSection";
 
 const manrope = Manrope({ subsets: ["latin"] });
+export const bungieFont = localFont({src: "./fonts/BNBungie-Clean.otf"});
 
 const Home = () => {
   return (
@@ -39,6 +42,8 @@ const Home = () => {
               <Landing />
               <About />
               <Projects />
+              {/* <WorkExperience /> */}
+              <FunStuff />
             </MouseParallaxChild>
           </div>
         </MouseParallaxContainer>

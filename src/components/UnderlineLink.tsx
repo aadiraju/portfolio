@@ -5,6 +5,7 @@ import Link from "next/link";
 type UnderlineLinkProps = {
   children: ReactNode;
   className?: string;
+  underlineColor?: string;
 } & ({ href: URL; onClick?: never } | { onClick: () => void; href?: never });
 
 const underlineStates = {
@@ -28,13 +29,19 @@ const textStates = {
   hover: {
     scale: 1.05,
     transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 40
-    }
+      type: "spring",
+      stiffness: 100,
+      damping: 40,
+    },
   },
 };
-const UnderlineLink = ({ children, href, onClick, className }: UnderlineLinkProps) => {
+const UnderlineLink = ({
+  children,
+  href,
+  onClick,
+  className,
+  underlineColor = "white",
+}: UnderlineLinkProps) => {
   const motionElements = (
     <motion.span
       className={`flex flex-col`}
@@ -42,9 +49,11 @@ const UnderlineLink = ({ children, href, onClick, className }: UnderlineLinkProp
       whileHover="hover"
       animate="rest"
     >
-      <motion.div variants={textStates} className="flex flex-row gap-2">{children}</motion.div>
+      <motion.div variants={textStates} className="flex flex-row gap-2">
+        {children}
+      </motion.div>
       <motion.div
-        className="h-[0.25vh] w-full rounded-full bg-white [transform-origin:0%]"
+        className={`h-[0.25vh] w-full rounded-full bg-${underlineColor} [transform-origin:0%]`}
         variants={underlineStates}
       />
     </motion.span>

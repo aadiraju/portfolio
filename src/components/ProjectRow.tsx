@@ -64,7 +64,7 @@ const ProjectRow = ({
                 key={index}
                 className={` ${
                   skills.length > 3 ? "basis-1/3 text-center" : ""
-                } rounded-lg border border-white px-4 py-2 text-sm font-normal transition duration-300 hover:bg-white hover:text-black xl:text-lg`}
+                } rounded-lg border border-white px-4 py-2 text-sm cursor-default font-normal transition duration-300 hover:bg-white hover:text-black xl:text-lg`}
                 initial={{ scale: 1 }}
                 whileHover={{ scale: 1.2 }}
                 transition={{ ...springConfigs, duration: 0.1 }}
