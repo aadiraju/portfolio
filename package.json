@@ -14,8 +14,7 @@
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-parallax-mouse": "^2.0.1",
-    "tailwindcss-animation-delay": "^1.0.7"
+    "react-parallax-mouse": "^2.0.1"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",

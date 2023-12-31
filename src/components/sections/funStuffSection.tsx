@@ -108,9 +108,11 @@ const FunStuff = () => {
           </ParallaxText>
         </div>
         <div className="z-20 flex h-full">
-          <div className="flex flex-col gap-6 text-4xl font-bold">
-            <motion.div>The Homies&#8482;</motion.div>
-            <div className="flex gap-6 text-2xl font-semibold">
+          <div className="flex flex-col gap-6">
+            <motion.div className={`${bungieFont.className} text-5xl`}>
+              The Homies<span className="mx-1 align-top text-xl">TM</span>
+            </motion.div>
+            <div className="flex gap-6 text-3xl font-semibold">
               <div>{decode(symbolArray[0])}</div>
               {HOMIE_WEBSITES.map((website, index) => (
                 <>
@@ -118,7 +120,7 @@ const FunStuff = () => {
                     <UnderlineLink
                       href={website.hyperlink}
                       className="w-[5vh]"
-                      underlineColor="black"
+                      underlineColor="bg-black"
                     >
                       {website.linkText}
                     </UnderlineLink>
@@ -133,15 +135,15 @@ const FunStuff = () => {
         </div>
         <motion.div
           ref={containerRef}
-          initial={{ scale: 1, z: 10, opacity: 0 }}
+          initial={{ scale: 1, z: 10 }}
           style={{ scale: useSpringify(scale) }}
-          animate={{ z: -30, opacity: 0.5 }}
+          animate={{ z: -30 }}
           transition={{
             duration: 0.8,
             type: "inertia",
             velocity: 50,
           }}
-          className="h-[10vh] w-[90%] justify-end bg-purple-400"
+          className="h-[10vh] w-[90%] justify-end bg-lavender"
         />
       </div>
     </>

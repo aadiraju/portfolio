@@ -40,7 +40,7 @@ const UnderlineLink = ({
   href,
   onClick,
   className,
-  underlineColor = "white",
+  underlineColor = "bg-white",
 }: UnderlineLinkProps) => {
   const motionElements = (
     <motion.span
@@ -53,7 +53,7 @@ const UnderlineLink = ({
         {children}
       </motion.div>
       <motion.div
-        className={`h-[0.25vh] w-full rounded-full bg-${underlineColor} [transform-origin:0%]`}
+        className={`h-[0.25vh] w-full rounded-full ${underlineColor} [transform-origin:0%]`}
         variants={underlineStates}
       />
     </motion.span>
