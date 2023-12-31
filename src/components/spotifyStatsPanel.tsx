@@ -38,7 +38,8 @@ const SpotifyStatsPanel = ({ topTracks }: SpotifyStatsProps) => {
             priority
           />
           <div className="flex flex-col p-1">
-            <div className="font-bold">{track.title}</div>
+            {/* TODO: Make these links a bit better */}
+            <a href={track.url}><div className="font-bold">{track.title}</div></a>
             <div>{track.artist}</div>
           </div>
         </div>
