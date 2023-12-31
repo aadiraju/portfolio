@@ -17,6 +17,6 @@ export const PROJECT_LINKS = {
 
 export const HOMIE_WEBSITES: Link[] = [
     {linkText: "Opey Adeyemi", hyperlink: new URL("https://www.opeyadeyemi.com/")},
-    {linkText: "Mathew De Vin", hyperlink: new URL("https://mathewdevin.com/")},
+    {linkText: "Mathew de Vin", hyperlink: new URL("https://mathewdevin.com/")},
     {linkText: "Caelan Atamanchuk", hyperlink: new URL("https://caelanatamanchuk.com/")},
 ];

@@ -1,4 +1,4 @@
-import { springConfigs, useSpringify } from "@/lib/utils";
+import { useSpringify } from "@/lib/utils";
 import {
   motion,
   useAnimationFrame,
@@ -10,10 +10,11 @@ import {
   wrap,
 } from "framer-motion";
 import { useRef } from "react";
-import { bungieFont } from "@/pages";
+import { bungieFont, manrope } from "@/pages";
 import UnderlineLink from "../UnderlineLink";
 import { decode } from "html-entities";
 import { HOMIE_WEBSITES } from "@/data/links";
+import SpotifyStatsPanel, { SpotifyStatsProps } from "../spotifyStatsPanel";
 interface ParallaxProps {
   children: string;
   childRepetitions: number;
@@ -76,7 +77,7 @@ const ParallaxText = ({
   );
 };
 
-const FunStuff = () => {
+const FunStuff = ({ topTracks }: SpotifyStatsProps) => {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef);
   const { scrollYProgress } = useScroll({ offset: ["start 0.001", "end end"] });
@@ -107,12 +108,23 @@ const FunStuff = () => {
             Stuff
           </ParallaxText>
         </div>
-        <div className="z-20 flex h-full">
+        <div className="z-20 flex h-full gap-10">
+          <div className="flex flex-col gap-6 basis-1/3 ml-[5vh]">
+            <motion.div className={`${bungieFont.className} text-5xl`}>
+              My Current Earworms
+            </motion.div>
+            <SpotifyStatsPanel topTracks={topTracks} />
+          </div>
           <div className="flex flex-col gap-6">
             <motion.div className={`${bungieFont.className} text-5xl`}>
-              The Homies<span className="mx-1 align-top text-xl">TM</span>
+              Websites from the Homies
+              <span
+                className={`mx-1 align-top text-xl font-bold ${manrope.className}`}
+              >
+                (✿◠‿◠)
+              </span>
             </motion.div>
-            <div className="flex gap-6 text-3xl font-semibold">
+            <div className="flex gap-6 text-3xl font-normal">
               <div>{decode(symbolArray[0])}</div>
               {HOMIE_WEBSITES.map((website, index) => (
                 <>

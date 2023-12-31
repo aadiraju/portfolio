@@ -11,11 +11,37 @@ import Header from "@/components/Header";
 import About from "@/components/sections/aboutSection";
 import Projects from "@/components/sections/projectsSection";
 import FunStuff from "@/components/sections/funStuffSection";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { DisplayTrack } from "@/components/spotifyStatsPanel";
+import { topTracks } from "@/lib/spotify";
+import { Track } from "@spotify/web-api-ts-sdk";
 
-const manrope = Manrope({ subsets: ["latin"] });
-export const bungieFont = localFont({src: "./fonts/BNBungie-Clean.otf"});
+export const manrope = Manrope({ subsets: ["latin"] });
+export const bungieFont = localFont({ src: "./fonts/BNBungie-Clean.otf" });
 
-const Home = () => {
+async function retrieveTopTracks(): Promise<DisplayTrack[]> {
+  const response = await topTracks();
+  const { items } = await response.json();
+
+  const tracks = items.slice(0, 5).map((track: Track) => ({
+    title: track.name,
+    artist: track.artists.map((_artist) => _artist.name).join(", "),
+    url: track.external_urls.spotify,
+    coverImageURL: track.album.images[1].url,
+  }));
+  return tracks;
+}
+
+export const getStaticProps = (async (context) => {
+  const topTracks = await retrieveTopTracks();
+  return { props: { topTracks } };
+}) satisfies GetStaticProps<{
+  topTracks: DisplayTrack[];
+}>;
+
+const Home = ({
+  topTracks,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <Head>
@@ -43,7 +69,7 @@ const Home = () => {
               <About />
               <Projects />
               {/* <WorkExperience /> */}
-              <FunStuff />
+              <FunStuff topTracks={topTracks} />
             </MouseParallaxChild>
           </div>
         </MouseParallaxContainer>
