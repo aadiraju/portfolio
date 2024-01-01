@@ -48,18 +48,18 @@ const Home = ({
         <title>Abhineeth Adiraju</title>
       </Head>
       <main>
-        <div className="fixed z-[-20] h-full w-full bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#000000_1px)] bg-[size:10px_10px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#ffffff10_33%,#000_100%)]"></div>
+        <div className="fixed z-[-20] h-full w-full bg-black bg-[radial-gradient(#ffffff33_1px,#000000_1px)] bg-[size:10px_10px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#ffffff10_33%,#000_100%)]"></div>
         <MouseParallaxContainer
           globalFactorX={0.05}
           globalFactorY={0.05}
           resetOnLeave
           inverted
-          className={`flex h-full min-h-screen items-center justify-center gap-6 px-7 py-0 ${manrope.className}`}
+          className={`flex h-full min-h-screen items-center justify-center md:gap-6 md:px-7 py-0 ${manrope.className}`}
         >
           <span className="z-10">
             <Header />
           </span>
-          <div className="relative flex h-full w-full justify-center p-8">
+          <div className="relative flex h-full w-full justify-center md:p-8">
             <MouseParallaxChild
               factorX={0.15}
               factorY={0.15}

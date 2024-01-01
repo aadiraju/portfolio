@@ -81,18 +81,19 @@ const FunStuff = ({ topTracks }: SpotifyStatsProps) => {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef);
   const { scrollYProgress } = useScroll({ offset: ["start 0.001", "end end"] });
-  const scale = useTransform(scrollYProgress, [0.9, 1], [0, 200]);
+  const isMobile =
+    typeof window !== "undefined" ? window.innerWidth < 768 : false;
+  const scaleOffset = isMobile ? [0.69, 0.7] : [0.99, 1];
+  const scale = useTransform(scrollYProgress, scaleOffset, [0, 500]);
   const symbolArray = ["&#9824;", "&#9827;", "&#9829;", "&#9830;"];
   return (
     <>
       <div
-        className={`z-10 mt-5 flex max-h-[100vh] h-[100vh] w-[100vw] flex-col p-5 tracking-tight ${
+        className={`z-10 mb-[10%] mt-[5%] flex h-[screen] w-[screen] flex-col p-[5%] tracking-tight md:mb-0 md:mt-[5vh] md:p-2 ${
           isInView ? "text-black" : "text-white"
         }`}
       >
-        <div
-          className={`${bungieFont.className} z-20 mb-[5vh] tracking-widest`}
-        >
+        <div className={`${bungieFont.className} z-20 mb-[2%] tracking-widest`}>
           <ParallaxText
             baseVelocity={7.5}
             childRepetitions={100}
@@ -108,14 +109,14 @@ const FunStuff = ({ topTracks }: SpotifyStatsProps) => {
             Stuff
           </ParallaxText>
         </div>
-        <div className="z-20 flex h-full gap-10">
-          <div className="flex flex-col gap-6 basis-1/3 ml-[5vh]">
+        <div className="gap-10r z-20 flex h-full flex-col md:flex-row">
+          <div className="flex flex-col gap-6 self-center md:ml-[5vh] md:basis-1/3">
             <motion.div className={`${bungieFont.className} text-5xl`}>
               My Current Earworms
             </motion.div>
             <SpotifyStatsPanel topTracks={topTracks} />
           </div>
-          <div className="flex flex-col gap-6">
+          <div className="mt-[15%] flex flex-col gap-[5%] md:mx-[5%] md:mt-0">
             <motion.div className={`${bungieFont.className} text-5xl`}>
               Websites from the Homies
               <span
@@ -124,8 +125,8 @@ const FunStuff = ({ topTracks }: SpotifyStatsProps) => {
                 (✿◠‿◠)
               </span>
             </motion.div>
-            <div className="flex gap-6 text-3xl font-normal">
-              <div>{decode(symbolArray[0])}</div>
+            <div className="mt-[5%] flex flex-col gap-6 text-2xl font-extrabold underline underline-offset-[1vh] md:mt-0 md:flex-row md:font-semibold md:no-underline">
+              <div className="hidden md:block">{decode(symbolArray[0])}</div>
               {HOMIE_WEBSITES.map((website, index) => (
                 <>
                   <div key={index}>
@@ -137,7 +138,7 @@ const FunStuff = ({ topTracks }: SpotifyStatsProps) => {
                       {website.linkText}
                     </UnderlineLink>
                   </div>
-                  <div key={index}>
+                  <div className="hidden md:block" key={index}>
                     {decode(symbolArray[(index + 1) % symbolArray.length])}
                   </div>
                 </>
@@ -149,13 +150,13 @@ const FunStuff = ({ topTracks }: SpotifyStatsProps) => {
           ref={containerRef}
           initial={{ scale: 1, z: 10 }}
           style={{ scale: useSpringify(scale) }}
-          animate={{ z: -30 }}
+          animate={{ z: isInView ? -30 : 10 }}
           transition={{
             duration: 0.8,
             type: "inertia",
             velocity: 50,
           }}
-          className="h-[10vh] w-[90%] justify-end bg-lavender"
+          className="absolute bottom-[0%] h-[1vh] w-[90%] justify-end bg-lavender"
         />
       </div>
     </>

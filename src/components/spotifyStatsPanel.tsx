@@ -1,4 +1,8 @@
 import Image from "next/image";
+import UnderlineLink from "./UnderlineLink";
+import { motion } from "framer-motion";
+import { springConfigs } from "@/lib/utils";
+import Link from "next/link";
 
 export type DisplayTrack = {
   title: string;
@@ -25,24 +29,30 @@ const imageLoader = ({
 
 const SpotifyStatsPanel = ({ topTracks }: SpotifyStatsProps) => {
   return (
-    <div className="flex flex-col text-md text-ellipsis px-10 py-4 rounded-xl bg-maroon text-white shadow-xl">
+    <div className="text-md flex flex-col rounded-xl bg-black px-5 md:px-10 py-4 gap-2 text-black shadow-xl">
       {topTracks.map((track, index) => (
-        <div key={index} className="flex flex-row gap-6 items-center rounded-xl shadow-lg p-1">
-          <Image
-            loader={imageLoader}
-            src={track.coverImageURL}
-            alt={track.title}
-            width={75}
-            height={75}
-            className="overflow-hidden rounded-lg border-4"
-            priority
-          />
-          <div className="flex flex-col p-1">
-            {/* TODO: Make these links a bit better */}
-            <a href={track.url}><div className="font-bold">{track.title}</div></a>
-            <div>{track.artist}</div>
-          </div>
-        </div>
+        <Link href={new URL(track.url)} target="_blank">
+          <motion.div
+            key={index}
+            className="flex flex-row items-center gap-2 md:gap-6 rounded-xl p-1 shadow-xl bg-lime"
+            whileHover={{ scale: 1.2 }}
+            transition={{ duration: 1, type: "spring", ...springConfigs }}
+          >
+            <Image
+              loader={imageLoader}
+              src={track.coverImageURL}
+              alt={track.title}
+              width={75}
+              height={75}
+              className="overflow-hidden rounded-lg border-4 shrink-0"
+              priority
+            />
+            <div className="flex flex-col p-1 w-full">
+              <div className="font-extrabold">{track.title}</div>
+              <div className="text-sm">{track.artist}</div>
+            </div>
+          </motion.div>
+        </Link>
       ))}
     </div>
   );

@@ -15,7 +15,8 @@ const config: Config = {
       },
       colors: {
         lavender: "#8989F4",
-        maroon: "#900E57"
+        maroon: "#900E57",
+        lime: "#98CE00"
       },
     },
   },

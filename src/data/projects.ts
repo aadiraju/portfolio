@@ -16,7 +16,7 @@ type Project = {
 const PROJECTS: Project[] = [
   {
     title: "HP Anyware Manager",
-    synopsis: "Highly available SaaS service for managing remote desktops",
+    synopsis: "Highly available SaaS service for managing remote desktops.",
     skills: ["Kubernetes", "Microsoft Azure", "Express", "TypeScript"],
     imgPath: "/awm.png",
     links: [
