@@ -46,16 +46,16 @@ const ProjectRow = ({
               {synopsis}
             </div>
           </div>
-          <div className="flex flex-[3] flex-col justify-start gap-6 md:flex-[5]">
+          <div className="ml-[5%] flex flex-[3] flex-col justify-start gap-6 md:flex-[5]">
             <div className="inline-flex flex-col justify-center text-lg md:text-2xl xl:font-normal">
               {links.map((link, index) => (
                 <UnderlineLink
                   key={index}
-                  className="w-[max-content]"
+                  className="w-[max-content] underline underline-offset-[0.75vh] sm:no-underline"
                   href={link.hyperlink}
                 >
                   {link.linkText}
-                  <Arrow />
+                  <Arrow className="hidden sm:inline" />
                 </UnderlineLink>
               ))}
             </div>

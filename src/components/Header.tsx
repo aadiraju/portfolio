@@ -20,7 +20,7 @@ const Header = () => {
           <Image
             src="/logosmall.png"
             alt="Site Logo"
-            className="rounded-lg p-[5%] shadow-sm backdrop-blur-sm"
+            className="rounded-lg p-[10%] shadow-sm backdrop-blur-sm"
             fill
             priority
           />
@@ -38,7 +38,7 @@ const Header = () => {
           />
         </motion.span>
       </div>
-      <div className="flex basis-full items-center justify-end text-xl tracking-tighter md:text-2xl md:font-medium">
+      <div className="flex basis-full items-center justify-end text-sm sm:text-xl tracking-tighter md:text-2xl md:font-medium">
         <motion.div
           style={{ scale: useSpringify(scaleMenuRaw) }}
           className="mr-[2%] flex gap-1 rounded-lg shadow-xl backdrop-blur-sm md:gap-2 md:rounded-xl md:p-4 md:shadow-2xl md:backdrop-blur-md"
