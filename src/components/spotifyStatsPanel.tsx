@@ -31,9 +31,8 @@ const SpotifyStatsPanel = ({ topTracks }: SpotifyStatsProps) => {
   return (
     <div className="text-md flex flex-col rounded-xl bg-black px-5 md:px-10 py-4 gap-2 text-black shadow-xl">
       {topTracks.map((track, index) => (
-        <Link href={new URL(track.url)} target="_blank">
+        <Link key={index} href={new URL(track.url)} target="_blank">
           <motion.div
-            key={index}
             className="flex flex-row items-center gap-2 md:gap-6 rounded-xl p-1 shadow-xl bg-lime"
             whileHover={{ scale: 1.2 }}
             transition={{ duration: 1, type: "spring", ...springConfigs }}
