@@ -9,17 +9,20 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@spotify/web-api-ts-sdk": "^1.1.2",
     "framer-motion": "^10.16.16",
+    "html-entities": "^2.4.0",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-parallax-mouse": "^2.0.1",
-    "tailwindcss-animation-delay": "^1.0.7"
+    "react-parallax-mouse": "^2.0.1"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "@types/spotify-api": "^0.0.25",
     "autoprefixer": "latest",
     "eslint": "latest",
     "eslint-config-next": "latest",

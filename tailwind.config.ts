@@ -13,23 +13,14 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
-      animation: {
-        blob: "blob 5s ease-in-out infinite",
-      },
-      keyframes: {
-        blob: {
-          "0%, 100%": {
-            transform: "scale(0.9)",
-          },
-          "50%": {
-            transform: "scale(1.1)",
-          }
-        },
+      colors: {
+        lavender: "#8989F4",
+        maroon: "#900E57",
+        lime: "#98CE00"
       },
     },
   },
   plugins: [
-    require("tailwindcss-animation-delay"),
   ],
 }
 export default config

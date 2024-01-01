@@ -4,6 +4,8 @@ import Link from "next/link";
 
 type UnderlineLinkProps = {
   children: ReactNode;
+  className?: string;
+  underlineColor?: string;
 } & ({ href: URL; onClick?: never } | { onClick: () => void; href?: never });
 
 const underlineStates = {
@@ -25,38 +27,46 @@ const textStates = {
     scale: 1,
   },
   hover: {
-    scale: 1.05,
+    scale: 1.1,
     transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 40
-    }
+      type: "spring",
+      stiffness: 100,
+      damping: 40,
+    },
   },
 };
-const UnderlineLink = ({ children, href, onClick }: UnderlineLinkProps) => {
+const UnderlineLink = ({
+  children,
+  href,
+  onClick,
+  className,
+  underlineColor = "bg-white",
+}: UnderlineLinkProps) => {
   const motionElements = (
-    <motion.div
-      className="flex flex-col"
+    <motion.span
+      className={`flex flex-col`}
       initial="rest"
       whileHover="hover"
       animate="rest"
     >
-      <motion.div variants={textStates}>{children}</motion.div>
+      <motion.div variants={textStates} className="flex flex-row gap-2">
+        {children}
+      </motion.div>
       <motion.div
-        className="h-[0.25vh] w-full rounded-full bg-white [transform-origin:0%]"
+        className={`h-[0.25vh] w-full rounded-full ${underlineColor} [transform-origin:0%]`}
         variants={underlineStates}
       />
-    </motion.div>
+    </motion.span>
   );
   if (href) {
     return (
-      <Link href={href} target="_blank">
+      <Link href={href} className={className} target="_blank">
         {motionElements}
       </Link>
     );
   }
   return (
-    <div className="cursor-pointer" onClick={onClick}>
+    <div className={`cursor-pointer ${className}`} onClick={onClick}>
       {motionElements}
     </div>
   );
