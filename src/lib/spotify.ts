@@ -24,7 +24,7 @@ const getAccessToken = async () => {
 export const topTracks = async () => {
   const { access_token } = await getAccessToken();
 
-  return fetch("https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=5", {
+  return fetch("https://api.spotify.com/v1/me/top/tracks?time_range=medium_term&limit=5", {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
