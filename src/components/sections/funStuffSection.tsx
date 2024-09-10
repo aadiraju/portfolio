@@ -98,6 +98,7 @@ const FunStuff = ({ topTracks }: SpotifyStatsProps) => {
             baseVelocity={7.5}
             childRepetitions={100}
             className="flex gap-4 text-[10vh] font-semibold"
+            key="0"
           >
             Cool
           </ParallaxText>
@@ -105,6 +106,7 @@ const FunStuff = ({ topTracks }: SpotifyStatsProps) => {
             baseVelocity={-7.5}
             childRepetitions={100}
             className="flex gap-4 text-[10vh] font-semibold"
+            key="1"
           >
             Stuff
           </ParallaxText>
