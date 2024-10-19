@@ -40,7 +40,7 @@ const UnderlineLink = ({
   href,
   onClick,
   className,
-  underlineColor = "bg-white",
+  underlineColor = "bg-[var(--dynamic-color)]",
 }: UnderlineLinkProps) => {
   const motionElements = (
     <motion.span
