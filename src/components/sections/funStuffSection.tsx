@@ -16,6 +16,7 @@ import { decode } from "html-entities";
 import { HOMIE_WEBSITES } from "@/data/links";
 import SpotifyStatsPanel, { SpotifyStatsProps } from "../spotifyStatsPanel";
 interface ParallaxProps {
+  keyPrefix: string;
   children: string;
   childRepetitions: number;
   baseVelocity: number;
@@ -23,6 +24,7 @@ interface ParallaxProps {
 }
 
 const ParallaxText = ({
+  keyPrefix,
   children,
   childRepetitions = 4,
   baseVelocity = 100,
@@ -69,7 +71,7 @@ const ParallaxText = ({
   return (
     <motion.div className={className} style={{ x }}>
       {Array.from({ length: childRepetitions }, (_, i) => i).map((elem) => (
-        <motion.span style={{ skew: skewFactor }} key={elem}>
+        <motion.span style={{ skew: skewFactor }} key={`${keyPrefix}${elem}`}>
           {children}
         </motion.span>
       ))}
@@ -95,18 +97,18 @@ const FunStuff = ({ topTracks }: SpotifyStatsProps) => {
       >
         <div className={`${bungieFont.className} z-20 mb-[2%] tracking-widest`}>
           <ParallaxText
+            keyPrefix="text1"
             baseVelocity={7.5}
             childRepetitions={100}
             className="flex gap-4 text-[10vh] font-semibold"
-            key="0"
           >
             Cool
           </ParallaxText>
           <ParallaxText
+            keyPrefix="text2"
             baseVelocity={-7.5}
             childRepetitions={100}
             className="flex gap-4 text-[10vh] font-semibold"
-            key="1"
           >
             Stuff
           </ParallaxText>
@@ -131,7 +133,7 @@ const FunStuff = ({ topTracks }: SpotifyStatsProps) => {
               <div className="hidden md:block">{decode(symbolArray[0])}</div>
               {HOMIE_WEBSITES.map((website, index) => (
                 <>
-                  <div key={index}>
+                  <div key={`link${index}`}>
                     <UnderlineLink
                       href={website.hyperlink}
                       className="w-[5vh]"
@@ -140,7 +142,7 @@ const FunStuff = ({ topTracks }: SpotifyStatsProps) => {
                       {website.linkText}
                     </UnderlineLink>
                   </div>
-                  <div className="hidden md:block" key={index}>
+                  <div className="hidden md:block" key={`symb${index}`}>
                     {decode(symbolArray[(index + 1) % symbolArray.length])}
                   </div>
                 </>

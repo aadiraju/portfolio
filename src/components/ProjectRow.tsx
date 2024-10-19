@@ -26,6 +26,7 @@ const ProjectRow = ({
       transition: { ...springConfigs, duration: 0.25 },
     },
   };
+  
   return (
     <MouseParallaxContainer
       globalFactorX={0.5}
@@ -65,7 +66,7 @@ const ProjectRow = ({
                   key={index}
                   className={` ${
                     skills.length > 3 ? "basis-1/3 text-center" : ""
-                  } cursor-default rounded-lg border border-white px-4 py-2 text-sm font-normal transition duration-300 hover:bg-white hover:text-black xl:text-lg`}
+                  } cursor-default rounded-lg border border-white px-4 py-2 text-sm font-normal hover:bg-[var(--dynamic-color)] hover:text-black xl:text-lg`}
                   initial={{ scale: 1 }}
                   whileHover={{ scale: 1.2 }}
                   transition={{ ...springConfigs, duration: 0.1 }}
