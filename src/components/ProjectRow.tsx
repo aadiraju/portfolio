@@ -84,7 +84,7 @@ const ProjectRow = ({
             <MouseParallaxChild
               factorX={0.25}
               factorY={0.02}
-              className="mr-[20%] w-[120%]"
+              className="mr-[20%] w-[120%] my-6"
             >
               <DraggableWindow className="relative h-[25vh] w-[44vh] mt-0" dragElastic={0.1}>
                 <div className="w-full h-full relative">

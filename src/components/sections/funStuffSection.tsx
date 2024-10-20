@@ -125,7 +125,7 @@ const FunStuff = ({ topTracks }: SpotifyStatsProps) => {
           <motion.div className={`${bungieFont.className} text-5xl`}>
             My Current Earworms
           </motion.div>
-          <SpotifyStatsPanel topTracks={topTracks} />
+          <SpotifyStatsPanel topTracks={topTracks} isInView={isInView} />
         </div>
         <div className="mt-[15%] flex flex-col gap-[5%] md:mx-[5%] md:mt-0">
           <motion.div className={`${bungieFont.className} text-5xl`}>

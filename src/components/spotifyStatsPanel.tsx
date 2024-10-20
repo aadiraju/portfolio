@@ -13,6 +13,7 @@ export type DisplayTrack = {
 
 export type SpotifyStatsProps = {
   topTracks: DisplayTrack[];
+  isInView?: boolean;
 };
 
 const imageLoader = ({
@@ -27,13 +28,13 @@ const imageLoader = ({
   return `${src}?w=${width}&q=${quality || 75}`;
 };
 
-const SpotifyStatsPanel = ({ topTracks }: SpotifyStatsProps) => {
+const SpotifyStatsPanel = ({ topTracks, isInView }: SpotifyStatsProps) => {
   return (
-    <div className="text-md flex flex-col rounded-xl bg-black px-5 md:px-10 py-4 gap-2 text-black shadow-xl">
+    <div className={`${isInView? 'bg-black': 'bg-white'} text-md flex flex-col rounded-xl px-5 py-4 gap-2 text-black shadow-xl`}>
       {topTracks.map((track, index) => (
         <Link key={index} href={new URL(track.url)} target="_blank">
           <motion.div
-            className="flex flex-row items-center gap-2 md:gap-6 rounded-xl p-1 shadow-xl bg-lime"
+            className={`${isInView? 'bg-lime': 'bg-[var(--dynamic-color)] border-black'} flex flex-row items-center gap-2 md:gap-6 rounded-xl p-1 shadow-xl border-2`}
             whileHover={{ scale: 1.2 }}
             transition={{ duration: 1, type: "spring", ...springConfigs }}
           >
@@ -43,7 +44,7 @@ const SpotifyStatsPanel = ({ topTracks }: SpotifyStatsProps) => {
               alt={track.title}
               width={75}
               height={75}
-              className="overflow-hidden rounded-lg border-4 shrink-0"
+              className={`${isInView? 'border-white': 'border-black'} overflow-hidden rounded-lg border-4 shrink-0`}
               priority
             />
             <div className="flex flex-col p-1 w-full">
