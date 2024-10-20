@@ -92,6 +92,7 @@ const ProjectRow = ({
                     src={imgPath}
                     alt={imgAltText ? imgAltText : "Project Image"}
                     fill
+                    sizes="100vw, 50vw, 33vw"
                     priority
                   />
                 </div>
