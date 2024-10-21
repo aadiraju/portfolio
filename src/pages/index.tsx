@@ -34,26 +34,6 @@ export const getStaticProps = (async (context) => {
   topTracks: DisplayTrack[];
 }>;
 
-//TODO: Use ShadCN
-// https://ui.shadcn.com/docs
-/**
- * Ideas:
- * - On the home page, maybe some kind of 1-bit barely moving pixel art depicting some of my hobbies/traits. These would be places in (draggable?) windows floating around.
- * would use some basic mascot character or something. Like cooking, gaming, coding so on.
- * - Add a splash of text highlights or hover highlights that changes hue gradually and constantly.
- * - Steal some ideas from https://stripe.dev/
- */
-
-/* 
-        TODO: Ideas for landing stuff:
-
-        1-bit pixel art
-        black and white game windows or something perhaps
-        maybe the pixel art is just small animations of some unique things about me, or just about devops, programmer, and designer
-        possibly use mascot character, or just a 1-bit blob, maybe even a bee-themed mascot?
-
-        the windows can be interactive perhaps, or they just slowly hover around the background, and move a litle based on mouse movement.
-  */
 
 const Home = ({
   topTracks,

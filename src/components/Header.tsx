@@ -22,6 +22,7 @@ const Header = () => {
             alt="Site Logo"
             className="rounded-lg p-[10%] shadow-sm backdrop-blur-sm"
             fill
+            sizes="50vw, 10vw, 5vh"
             priority
           />
         </motion.div>

@@ -14,10 +14,10 @@ const MainSection = ({ topTracks }: SpotifyStatsProps) => {
     <motion.div
       className={`flex h-full min-h-screen items-center justify-center py-0 md:gap-6 md:px-7 ${manrope.className} selection:bg-[var(--dynamic-color)]`}
     >
-      <span className="z-10">
+      <span key="header" className="z-10">
         <Header />
       </span>
-      <div className="relative flex h-full w-full justify-center md:p-8">
+      <div key="content" className="relative flex h-full w-full justify-center md:p-8">
         <MouseParallaxChild
           factorX={0.15}
           factorY={0.15}
