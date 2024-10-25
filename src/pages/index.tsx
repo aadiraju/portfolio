@@ -61,6 +61,7 @@ const Home = ({
           globalFactorY={0.05}
           resetOnLeave
           inverted
+          className={`flex h-full min-h-screen items-center justify-center md:gap-6 md:px-7 py-0 ${manrope.className} selection:bg-[var(--dynamic-color)]`}
         >
           <MainSection topTracks={topTracks} />
         </MouseParallaxContainer>
