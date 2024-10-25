@@ -91,7 +91,7 @@ const FunStuff = ({ topTracks }: SpotifyStatsProps) => {
   return (
     <>
       <div
-        className={`z-10 mb-[10%] mt-[5%] flex h-[screen] w-[screen] flex-col p-[5%] tracking-tight md:mb-0 md:mt-[5vh] md:p-2 ${
+        className={`z-10 mb-[10%] mt-[5%] flex h-[screen] w-full flex-col p-[5%] tracking-tight md:mb-0 md:mt-[5vh] md:p-2 ${
           isInView ? "text-black" : "text-white"
         }`}
       >

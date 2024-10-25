@@ -5,15 +5,11 @@ import About from "./aboutSection";
 import Projects from "./projectsSection";
 import FunStuff from "./funStuffSection";
 import { SpotifyStatsProps } from "../spotifyStatsPanel";
-import { manrope } from "@/pages";
-import { motion } from "framer-motion";
 import React from "react";
 
 const MainSection = ({ topTracks }: SpotifyStatsProps) => {
   return (
-    <motion.div
-      className={`flex h-full min-h-screen items-center justify-center py-0 md:gap-6 md:px-7 ${manrope.className} selection:bg-[var(--dynamic-color)]`}
-    >
+    <>
       <span className="z-10">
         <Header />
       </span>
@@ -30,7 +26,7 @@ const MainSection = ({ topTracks }: SpotifyStatsProps) => {
           <FunStuff topTracks={topTracks} />
         </MouseParallaxChild>
       </div>
-    </motion.div>
+    </>
   );
 };
 
