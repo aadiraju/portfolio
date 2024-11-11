@@ -55,7 +55,7 @@ const Home = ({
       <motion.main style={{
         "--dynamic-color": highlightColor
       } as React.CSSProperties}>
-        <div className="fixed z-[-20] h-full w-full bg-black bg-[radial-gradient(#ffffff33_1px,#000000_1px)] bg-[size:10px_10px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#ffffff10_33%,#000_100%)]"></div>
+        <div className="fixed z-[-20] h-full w-full bg-black bg-[radial-gradient(#ffffff33_1px,#000000_1px)] bg-[size:10px_10px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#ffffff77_33%,#000_100%)]"></div>
         <MouseParallaxContainer
           globalFactorX={0.05}
           globalFactorY={0.05}

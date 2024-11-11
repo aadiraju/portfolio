@@ -94,6 +94,8 @@ const ProjectRow = ({
                     fill
                     sizes="100vw, 50vw, 33vw"
                     priority
+                    className="[user-select:none] [touch-action:none] [will-change:auto] transform-none"
+                    draggable={false}
                   />
                 </div>
               </DraggableWindow>

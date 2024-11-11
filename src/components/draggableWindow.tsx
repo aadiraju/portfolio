@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useState } from "react";
 import { motion } from "framer-motion";
 
 type DraggableWindowProps = {
@@ -10,12 +10,17 @@ type DraggableWindowProps = {
 const DraggableWindow = ({
   children,
   className,
-  dragElastic = 0.5,
+  dragElastic = 0.8,
 }: DraggableWindowProps) => {
+  const [dragging, setDrag] = useState(false);
   return (
     <motion.div
-      className={`${className} mx-auto my-auto`}
+      className={`${className} mx-auto my-auto ${
+        dragging ? "cursor-grabbing" : "cursor-grab"
+      }`}
       drag
+      onDragStart={() => setDrag(true)}
+      onDragEnd={() => setDrag(false)}
       dragSnapToOrigin
       dragElastic={dragElastic}
       dragTransition={{ bounceStiffness: 1000, bounceDamping: 30 }}

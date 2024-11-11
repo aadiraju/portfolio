@@ -3,7 +3,7 @@ import Image from "next/image";
 import DraggableWindow from "../draggableWindow";
 
 type WindowItem = {
-  content: string;
+  imageSrc: string;
   x: number;
   y: number;
 };
@@ -18,30 +18,30 @@ const convertXYToStyleObject = (x: number, y: number, center = 50) => {
 const Landing = () => {
   const windowMap: WindowItem[] = [
     {
-      content: "test",
+      imageSrc: "./busybeecoding.gif",
       x: 15,
       y: 50,
     },
     {
-      content: "test2",
-      x: -40,
+      imageSrc: "./busybeecoding.gif",
+      x: -45,
       y: -20,
     },
     {
-      content: "test3",
+      imageSrc: "./busybeecoding.gif",
       x: -35,
       y: 55,
     },
     {
-      content: "test4",
+      imageSrc: "./busybeecoding.gif",
       x: 20,
-      y: -35,
+      y: -30,
     },
   ];
 
   return (
     <div className="flex h-[100vh] w-full flex-col justify-center">
-      <div className="flex flex-col justify-center gap-2 p-5 text-6xl font-bold tracking-tighter drop-shadow-lg md:text-7xl md:drop-shadow-xl z-20">
+      <div className="z-10 flex flex-col justify-center gap-2 p-5 text-6xl font-bold tracking-tighter drop-shadow-lg md:text-7xl md:drop-shadow-xl">
         <div className="flex-shrink-0 items-baseline sm:text-center">
           Abhineeth
         </div>
@@ -49,24 +49,32 @@ const Landing = () => {
           Adiraju
         </div>
       </div>
-      <div className="flex w-full flex-row items-center justify-center gap-[2.5%] font-normal tracking-tighter md:gap-4 md:p-5 md:text-3xl z-20">
+      <div className="z-10 flex w-full flex-row items-center justify-center gap-[2.5%] font-normal tracking-tighter md:gap-4 md:p-5 md:text-3xl">
         <div className="">DevOps Engineer</div>
         <div>|</div>
         <div className="">Artist</div>
         <div>|</div>
         <div className="">Home &quot;Chef&quot;</div>
       </div>
-      <div className="absolute hidden h-[70vh] w-full z-10 lg:block">
+      <div className="absolute hidden h-[70vh] w-full lg:block">
         {windowMap.map((window, index) => {
           return (
             <div
               key={`window-${index}`}
-              className={`absolute`}
+              className={`absolute z-20`}
               style={convertXYToStyleObject(window.x, window.y)}
             >
               <DraggableWindow>
-                <div className="items-center-justify-center m-10 self-center text-6xl font-bold">
-                  {window.content}
+                <div className="items-center-justify-center mx-1 my-1 z-10 self-center text-2xl font-bold">
+                  <Image
+                    src={window.imageSrc}
+                    height={200}
+                    width={200}
+                    alt={`gif!`}
+                    unoptimized={true}
+                    className="[user-select:none] [touch-action:none] [will-change:auto] transform-none"
+                    draggable={false}
+                  />
                 </div>
               </DraggableWindow>
             </div>
