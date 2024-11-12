@@ -13,7 +13,7 @@ const MainSection = ({ topTracks }: SpotifyStatsProps) => {
       <span className="z-10">
         <Header />
       </span>
-      <div className="relative flex h-full w-full justify-center md:p-8">
+      <div key="content" className="relative flex h-full w-full justify-center md:p-8">
         <MouseParallaxChild
           factorX={0.15}
           factorY={0.15}

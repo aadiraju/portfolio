@@ -8,6 +8,7 @@ import UnderlineLink from "@/components/UnderlineLink";
 import Arrow from "../../public/Arrow.svg";
 import { motion } from "framer-motion";
 import { springConfigs } from "@/lib/utils";
+import DraggableWindow from "./draggableWindow";
 
 const ProjectRow = ({
   title,
@@ -26,7 +27,7 @@ const ProjectRow = ({
       transition: { ...springConfigs, duration: 0.25 },
     },
   };
-  
+
   return (
     <MouseParallaxContainer
       globalFactorX={0.5}
@@ -81,19 +82,23 @@ const ProjectRow = ({
             className="hidden flex-[5] justify-center align-top md:flex"
           >
             <MouseParallaxChild
-              factorX={0.5}
+              factorX={0.25}
               factorY={0.02}
-              className="mr-[20%] w-[120%]"
+              className="mr-[20%] w-[120%] my-6"
             >
-              <motion.div className="relative h-[25vh] w-[44vh] overflow-hidden rounded-lg border-4 border-white">
-                <Image
-                  src={imgPath}
-                  alt={imgAltText ? imgAltText : "Project Image"}
-                  className="border-white"
-                  fill
-                  priority
-                />
-              </motion.div>
+              <DraggableWindow className="relative h-[25vh] w-[44vh] mt-0" dragElastic={0.1}>
+                <div className="w-full h-full relative">
+                  <Image
+                    src={imgPath}
+                    alt={imgAltText ? imgAltText : "Project Image"}
+                    fill
+                    sizes="100vw, 50vw, 33vw"
+                    priority
+                    className="[user-select:none] [touch-action:none] [will-change:auto] transform-none"
+                    draggable={false}
+                  />
+                </div>
+              </DraggableWindow>
             </MouseParallaxChild>
           </motion.div>
         </div>
