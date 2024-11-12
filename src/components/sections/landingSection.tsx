@@ -41,11 +41,11 @@ const Landing = () => {
 
   return (
     <div className="flex h-[100vh] w-full flex-col justify-center">
-      <div className="z-10 flex flex-col justify-center gap-2 p-5 text-6xl font-bold tracking-tighter drop-shadow-lg md:text-7xl md:drop-shadow-xl">
-        <div className="flex-shrink-0 items-baseline sm:text-center">
+      <div className="z-10 flex flex-col justify-center self-center gap-2 p-5 text-6xl font-bold tracking-tighter drop-shadow-lg md:text-7xl md:drop-shadow-xl">
+        <div className="flex-shrink-0 items-baseline sm:text-center self-center">
           Abhineeth
         </div>
-        <div className="flex-shrink-0 items-baseline sm:text-center">
+        <div className="flex-shrink-0 items-baseline sm:text-center self-center">
           Adiraju
         </div>
       </div>
