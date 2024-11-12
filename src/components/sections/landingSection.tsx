@@ -18,12 +18,12 @@ const convertXYToStyleObject = (x: number, y: number, center = 50) => {
 const Landing = () => {
   const windowMap: WindowItem[] = [
     {
-      imageSrc: "./busybeecoding.gif",
+      imageSrc: "./busybeecooking.gif",
       x: 15,
       y: 50,
     },
     {
-      imageSrc: "./busybeecoding.gif",
+      imageSrc: "./busybeesinging.gif",
       x: -45,
       y: -20,
     },
@@ -33,7 +33,7 @@ const Landing = () => {
       y: 55,
     },
     {
-      imageSrc: "./busybeecoding.gif",
+      imageSrc: "./busybeetrolling.gif",
       x: 20,
       y: -30,
     },

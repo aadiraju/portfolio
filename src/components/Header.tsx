@@ -36,10 +36,12 @@ const Header = () => {
             width={75}
             height={75}
             priority
+            className="transform-none [touch-action:none] [user-select:none] [will-change:auto]"
+            draggable={false}
           />
         </motion.span>
       </div>
-      <div className="flex basis-full items-center justify-end text-sm sm:text-xl tracking-tighter md:text-2xl md:font-medium">
+      <div className="flex basis-full items-center justify-end text-sm tracking-tighter sm:text-xl md:text-2xl md:font-medium">
         <motion.div
           style={{ scale: useSpringify(scaleMenuRaw) }}
           className="mr-[2%] flex gap-1 rounded-lg shadow-xl backdrop-blur-sm md:gap-2 md:rounded-xl md:p-4 md:shadow-2xl md:backdrop-blur-md"
