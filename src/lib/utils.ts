@@ -1,4 +1,4 @@
-import { MotionValue, useSpring } from "framer-motion";
+import { MotionValue, useSpring } from "motion/react";
 
 const springConfigs = {
   stiffness: 100,

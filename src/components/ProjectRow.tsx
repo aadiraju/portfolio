@@ -6,9 +6,10 @@ import {
 import Image from "next/image";
 import UnderlineLink from "@/components/UnderlineLink";
 import Arrow from "../../public/Arrow.svg";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { springConfigs } from "@/lib/utils";
 import DraggableWindow from "./draggableWindow";
+import HoverHighlight from "./hoverHighlight";
 
 const ProjectRow = ({
   title,
@@ -41,7 +42,7 @@ const ProjectRow = ({
         animate="rest"
         className="flex flex-col gap-4 font-extralight md:overflow-visible"
       >
-        <div className="text-lg font-semibold md:text-4xl">{title}</div>
+        <div className="text-lg font-semibold md:text-4xl"><HoverHighlight>{title}</HoverHighlight></div>
         <div className="flex flex-row">
           <div className="flex flex-[3] flex-col gap-4 md:flex-[4]">
             <div className="text-md pr-[7%] md:pr-6 md:text-2xl">

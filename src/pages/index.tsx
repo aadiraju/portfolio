@@ -8,7 +8,7 @@ import { topTracks } from "@/lib/spotify";
 import { Track } from "@spotify/web-api-ts-sdk";
 import MainSection from "@/components/sections/mainSection";
 import { DisplayTrack } from "@/components/spotifyStatsPanel";
-import { motion, useTime, useTransform } from "framer-motion";
+import { motion, useTime, useTransform } from "motion/react";
 import React, { useState, useEffect } from "react";
 
 export const manrope = Manrope({ subsets: ["latin"] });

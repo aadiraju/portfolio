@@ -8,7 +8,7 @@ import {
   useTransform,
   useVelocity,
   wrap,
-} from "framer-motion";
+} from "motion/react";
 import { useRef } from "react";
 import { bungieFont, manrope } from "@/pages";
 import UnderlineLink from "../UnderlineLink";

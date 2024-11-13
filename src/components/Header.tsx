@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useScroll, motion, useTransform } from "framer-motion";
+import { useScroll, motion, useTransform } from "motion/react";
 import { GITHUB, LINKEDIN } from "@/data/links";
 import { useClickActions } from "@/hooks/useClickActions";
 import UnderlineLink from "@/components/UnderlineLink";

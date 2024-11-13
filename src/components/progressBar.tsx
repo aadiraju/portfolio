@@ -1,5 +1,5 @@
 import { useSpringify } from "@/lib/utils";
-import { useScroll, motion } from "framer-motion";
+import { useScroll, motion } from "motion/react";
 
 const ProgressBar = () => {
   const { scrollYProgress } = useScroll({ offset: ["start 0.001", "end end"] });
